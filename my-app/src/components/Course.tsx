@@ -1,10 +1,13 @@
-const Course = ({title, description}: {title: string; description: string}) => {
-    return (
-        <div>
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </div>
-    );
+const Course = ({title, description}: CourseProps) => (
+  <div>
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
+)
+
+interface CourseProps {
+  title: string;
+  description: string;
 }
 
 export default Course

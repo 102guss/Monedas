@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Course
-        title="Curso de TypeScript"
+        title="Curso de React"
         description="Aprende React dede cero"
       />
       <Course
@@ -14,11 +14,11 @@ function App() {
       />
 
       <Course
-        title="Curso de TypeScript"
+        title="Curso de Angular"
         description="Aprende Angular desde cero"
       />
       <Course
-        title="Curso de TypeScript"
+        title="Curso de Vue.js"
         description="Aprende Vue.js desde cero"
       />
     </>
