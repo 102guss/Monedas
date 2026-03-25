@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-     <h1>Estoy en mi proyecto 4 de monedas</h1>
+     <Header/>
     </>
   )
 }
