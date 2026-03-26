@@ -2,6 +2,7 @@ import Coin from './components/Coin'
 import coins from './data/coins'
 import { useRef, useState } from 'react'
 import type { CoinInterface } from './interfaces/Coin'
+import Header from './components/Header'
 
 const App = () => {
   const [coinsList, setCoinsList] = useState<CoinInterface[]>(coins)
@@ -14,23 +15,8 @@ const handleSearch = () => {
 }
 
   return (
-    <main>
-      <h1>Lista de criptomonedas</h1>
-      <input type="text" placeholder="Buscar criptomoneda" ref={searchInput} onChange={handleSearch}/>
-      <div>
-        {coinsList.map(coin => (
-          <Coin 
-            key={coin.order}
-            order={coin.order}
-            name={coin.name}
-            symbol={coin.symbol}
-            price={coin.price}
-            priceChange={coin.priceChange}
-            code={coin.code}
-          />
-        ))}
-      </div>
-    </main>
+    <Header />
+   
   )
 }
 export default App
