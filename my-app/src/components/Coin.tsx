@@ -1,9 +1,13 @@
+import { useState } from "react"
 import type { CoinInterface } from "../interfaces/Coin"
 
 const Coin = ({order, name, symbol, price, priceChange, code}: CoinInterface) => {
 
-  const addToFavorites = () => { if(name === "Bitcoin") { alert("Bitcoin es la mejor criptomoneda") } }
+const [isFavorite, setIsFavorite] = useState(false)
 
+const addToFavorites = () => {
+  alert("Añadido a favoritos")
+}
   return (
     <div>
       <span>{order}</span>
@@ -12,7 +16,11 @@ const Coin = ({order, name, symbol, price, priceChange, code}: CoinInterface) =>
       <span>{symbol}</span>
       <span>{price}</span>
       <span>{priceChange}</span>
-      <button onClick={addToFavorites}>Agregar a favoritos</button>
+      <button onClick={addToFavorites}>
+  {
+    isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
+  }
+</button>
     </div>
   )
 }
