@@ -3,7 +3,7 @@ import type { CoinInterface } from "../interfaces/Coin"
 
 const Coin = ({order, name, symbol, price, priceChange, code}: CoinInterface) => {
 
-const [isFavorite, setIsFavorite] = useState(false)
+const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
 const handleFavorites = () => {
   setIsFavorite(!isFavorite)

@@ -1,10 +1,11 @@
 import Coin from './components/Coin'
 import coins from './data/coins'
 import { useRef, useState } from 'react'
+import type { CoinInterface } from './interfaces/Coin'
 
 const App = () => {
-  const [coinsList, setCoinsList] = useState(coins)
-  const searchInput = useRef(null)
+  const [coinsList, setCoinsList] = useState<CoinInterface[]>(coins)
+  const searchInput = useRef<HTMLInputElement>(null)
 
 const handleSearch = () => {
   const searchValue = searchInput.current?.value || ''
