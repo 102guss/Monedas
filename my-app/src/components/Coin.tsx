@@ -5,8 +5,8 @@ const Coin = ({order, name, symbol, price, priceChange, code}: CoinInterface) =>
 
 const [isFavorite, setIsFavorite] = useState(false)
 
-const addToFavorites = () => {
-  alert("Añadido a favoritos")
+const handleFavorites = () => {
+  setIsFavorite(!isFavorite)
 }
   return (
     <div>
@@ -16,7 +16,7 @@ const addToFavorites = () => {
       <span>{symbol}</span>
       <span>{price}</span>
       <span>{priceChange}</span>
-      <button onClick={addToFavorites}>
+      <button onClick={handleFavorites}>
   {
     isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
   }
