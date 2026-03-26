@@ -1,4 +1,4 @@
-export interface CoinProps {
+export interface CoinInterface {
   order: number;
   name: string;
   symbol: string;
