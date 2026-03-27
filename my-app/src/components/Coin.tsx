@@ -15,7 +15,7 @@ const Coin = ({
     setIsFavorite(!isFavorite);
   };
   return (
-    <tr className="coin-card">
+    <tr className="coin-card [&>td]:px-4 [&>td]:py-3">
       <td>{order}</td>
       <td>
         <div className="flex items-center gap-3">

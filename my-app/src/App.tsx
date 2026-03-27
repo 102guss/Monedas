@@ -1,17 +1,16 @@
 
 import Header from "./components/Header";
-import CoinsTable from "./components/CoinsTable";
+import CoinsContainer from "./components/CoinsContainer";
 
 const App = () => {
  
   return (
     <>
       <Header />
-      <main className="bg-white">
-        <h1>Lista de criptomonedas</h1>
-       
+      <main className="container mx-auto  py-8">
+     
         <div className="coins-list">
-          <CoinsTable />
+          <CoinsContainer />
         </div>
       </main>
     </>
