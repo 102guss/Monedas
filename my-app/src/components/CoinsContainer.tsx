@@ -24,7 +24,15 @@ const CoinsContainer = () => {
         onChange={handleSearch}
         className="w-full bg-white px-4 py-3 text-lg rounded-lg"
       />
-      <CoinsTable coins={coinsList} />
+      {coinsList.length > 0 ? 
+      (
+        <CoinsTable coins={coinsList} />
+      ) : 
+      (
+        <div className="flex justify-center items-center h-full bg-white rounded-lg shadow-sm overflow-hidden py-12">
+          <p>No se encontraron resultados.</p>
+        </div>
+      )}
     </>
   );
 };
