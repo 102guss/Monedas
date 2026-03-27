@@ -9,20 +9,21 @@ const handleFavorites = () => {
   setIsFavorite(!isFavorite)
 }
   return (
-    <div>
-      <span>{order}</span>
-      <h2>{name}</h2>
-      <span>{code}</span>
-      <span>{symbol}</span>
-      <span>{price}</span>
-      <span>{priceChange}</span>
+  <tr className="coin-card">
+    <td>{order}</td>
+    <td>{name}</td>
+    <td>{code}</td>
+    <td>{symbol}</td>
+    <td>{price}</td>
+    <td>{priceChange}</td>
+    <td>
       <button onClick={handleFavorites}>
-  {
-    isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
-  }
-</button>
-    </div>
-  )
+        {
+          isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
+        }
+      </button>
+    </td>
+  </tr>
+)
 }
-
 export default Coin

@@ -17,7 +17,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       <Header />
       <main className="bg-white">
         <h1>Lista de criptomonedas</h1>
@@ -33,7 +33,7 @@ const App = () => {
           ))}
         </div>
       </main>
-    </div>
+    </>
   );
 };
 export default App;
