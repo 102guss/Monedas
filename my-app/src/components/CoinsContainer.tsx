@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CoinInterface } from "../interfaces/Coin";
 import CoinsTable from "./CoinsTable";
 import CoinsNotFound from "./CoinsNotFound";
-import { URL_API } from "../constants/api"
+import { URL_API, URL_COINS } from "../constants/api"
 
 const CoinsContainer = () => {
   const [coinsList, setCoinsList] = useState<CoinInterface[]>([]);
@@ -11,8 +11,11 @@ const CoinsContainer = () => {
   const [error, setError] = useState<string | null>(null)
   const searchInput = useRef<HTMLInputElement>(null);
 
+   
+
+
   useEffect(() => {
-  fetch(URL_API)
+    fetch(`${URL_API}/${URL_COINS}`)
     .then(response => response.json())
     .then(data => {
       setCoinsList(data)
