@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CoinInterface } from "../interfaces/Coin";
 import CoinsTable from "./CoinsTable";
 import CoinsNotFound from "./CoinsNotFound";
-import { URL_API, URL_COINS } from "../constants/api"
+import { COINGECKO_API_KEY, URL_API, URL_COINS } from "../constants/api"
 
 const CoinsContainer = () => {
   const [coinsList, setCoinsList] = useState<CoinInterface[]>([]);
@@ -15,7 +15,7 @@ const CoinsContainer = () => {
 
 
   useEffect(() => {
-    fetch(`${URL_API}/${URL_COINS}`)
+    fetch(`${URL_API}${URL_COINS}&x_cg_demo_api_key=${COINGECKO_API_KEY}`)
     .then(response => response.json())
     .then(data => {
       setCoinsList(data)
