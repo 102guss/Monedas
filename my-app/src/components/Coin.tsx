@@ -3,6 +3,7 @@ import type { CoinInterface } from "../interfaces/Coin";
 
 const Coin = ({
 
+  id,
   name,
   symbol,
   current_price,
@@ -17,7 +18,7 @@ const Coin = ({
   };
   return (
     <tr className="coin-card [&>td]:px-4 [&>td]:py-3">
-      <td className="px-6 py-4 text-sm text-gray-600">-</td>
+      <td className="px-6 py-4 text-sm text-gray-600">{id}</td>
       <td className="px-6 py-4">
         <div className="flex items-center gap-3">
           <img src={image} alt={symbol} className="w-10 h-10 rounded-full" />
@@ -29,7 +30,7 @@ const Coin = ({
         </div>
       </td>
       <td>{current_price}</td>
-      <td>{price_change_percentage_24h}</td>
+      <td>{price_change_percentage_24h?.toFixed(2)}%</td>
       <td>
         <button onClick={handleFavorites}>
           {isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"}
