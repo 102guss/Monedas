@@ -6,6 +6,7 @@ import CoinsNotFound from "./CoinsNotFound";
 const CoinsContainer = () => {
   const [coinsList, setCoinsList] = useState<CoinInterface[]>([]);
   const [coinsListOriginal, setCoinsListOriginal] = useState<CoinInterface[]>([]);
+  const [loading, setLoading] = useState<boolean>(true)
   const searchInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -18,6 +19,9 @@ const CoinsContainer = () => {
     .catch(error => {
       console.error("Error al obtener los datos:", error)
     })
+    .finally(() => {
+  setLoading(false)
+})
 }, [])
 
   const handleSearch = () => {
@@ -27,6 +31,10 @@ const CoinsContainer = () => {
     );
     setCoinsList(newCoinsList);
   };
+
+  if (loading) {
+  return <div>Cargando...</div>
+}
 
   return (
     <>
