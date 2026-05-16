@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { COINGECKO_API_KEY, URL_API, URL_COINS } from "../constants/api"
+import { useParams } from "react-router-dom"
 
 const CoinContainer = () => {
     const [Coin, setCoin] = useState(null)
-
+    const { id } = useParams()
 useEffect(() => {
-  fetch(`${URL_API}${URL_COINS}&x_cg_demo_api_key=${COINGECKO_API_KEY}&ids=bitcoin`)
+  fetch(`${URL_API}${URL_COINS}&x_cg_demo_api_key=${COINGECKO_API_KEY}&ids=${id}`)
   .then(response => response.json())
   .then(data => {
     setCoin(data[0])
