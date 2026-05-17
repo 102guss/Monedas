@@ -35,7 +35,11 @@ const Coin = ({
       <td>{current_price}</td>
       <td>{price_change_percentage_24h?.toFixed(2)}%</td>
       <td>
-        <button onClick={handleFavorites}>
+        <button
+          type="button"
+          onClick={handleFavorites}
+          className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
+        >
           {isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"}
         </button>
       </td>
