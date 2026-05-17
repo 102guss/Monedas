@@ -13,9 +13,12 @@ const Coin = ({
  
 }: CoinInterface) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-
+  
+  
   const handleFavorites = () => {
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     setIsFavorite(!isFavorite);
+    localStorage.setItem("favorites", JSON.stringify([...favorites, id]));
   };
   return (
     <tr className="coin-card [&>td]:px-4 [&>td]:py-3">
